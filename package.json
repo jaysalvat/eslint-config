@@ -1,0 +1,29 @@
+{
+  "name": "@jaysalvat/eslint-config",
+  "version": "1.0.0",
+  "description": "Personal Eslint config",
+  "main": "index.js",
+  "scripts": {
+    "patch": "npm version patch & npm publish",
+    "minor": "npm version minor & npm publish",
+    "major": "npm version major & npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaysalvat/eslint-config.git"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaysalvat/eslint-config/issues"
+  },
+  "homepage": "https://github.com/jaysalvat/eslint-config#readme",
+  "dependencies": {
+    "eslint": "^7.20.0"
+  }
+}
