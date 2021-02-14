@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Personal Eslint config",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "patch": "npm version patch & npm publish",
     "minor": "npm version minor & npm publish",
