@@ -1,9 +1,13 @@
+/* eslint-disable no-undef */
+
+const prod = process.env.NODE_ENV === "production"
+
 module.exports = {
   parserOptions: {
     ecmaVersion: 6
   },
   rules: {
-    "no-alert": 2,
+    "no-alert": prod ? 2 : 0,
     "no-array-constructor": 2,
     "no-bitwise": 0,
     "no-caller": 2,
@@ -11,11 +15,11 @@ module.exports = {
     "no-class-assign": 0,
     "no-cond-assign": 2,
     "no-const-assign": 2,
-    "no-console": 0,
+    "no-console": prod ? 2 : 0,
     "no-constant-condition": 2,
     "no-continue": 0,
     "no-control-regex": 2,
-    "no-debugger": 2,
+    "no-debugger": prod ? 2 : 0,
     "no-delete-var": 2,
     "no-div-regex": 0,
     "no-dupe-keys": 2,
