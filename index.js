@@ -1,4 +1,4 @@
 
 /* eslint-env node */
 
-module.exports = require("./.eslintrc.js")
+module.exports = require('./.eslintrc.js')
