@@ -173,6 +173,7 @@ module.exports = {
     'new-cap': 2,
     'new-parens': 2,
     'newline-after-var': 1,
+    'newline-before-return': 2,
     'object-curly-spacing': [ 2, 'always' ],
     'object-shorthand': 0,
     'one-var': 0,
