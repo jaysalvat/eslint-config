@@ -15,7 +15,7 @@ Inside your project `.eslintrc` file
 
 ```js
 {
-    extends: "@jaysalvat/eslint-config"
+    "extends": "@jaysalvat/eslint-config"
 }
 ```
 
