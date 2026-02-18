@@ -13,6 +13,18 @@ npm install @jaysalvat/eslint-config
 
 Inside your project `eslint.config.js` file (ESLint récent)
 
+If your project uses `"type": "module"` (ESM):
+
+```js
+import jaysalvat from '@jaysalvat/eslint-config'
+
+export default [
+    ...jaysalvat
+]
+```
+
+If your project uses CommonJS:
+
 ```js
 const jaysalvat = require('@jaysalvat/eslint-config')
 
