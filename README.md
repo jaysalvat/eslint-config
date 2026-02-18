@@ -11,15 +11,25 @@ Install npm package
 npm install @jaysalvat/eslint-config
 ```
 
-Inside your project `.eslintrc` file
+Inside your project `eslint.config.js` file (ESLint récent)
+
+```js
+const jaysalvat = require('@jaysalvat/eslint-config')
+
+module.exports = [
+    ...jaysalvat
+]
+```
+
+Legacy usage (`.eslintrc.*`)
 
 ```js
 {
-    "extends": "@jaysalvat/eslint-config"
+    "extends": "@jaysalvat/eslint-config/legacy"
 }
 ```
 
-## Furthur Reading
+## Further Reading
 
 * [Eslint shareable configurations](http://eslint.org/docs/developer-guide/shareable-configs)
 * [How extend works](https://github.com/eslint/eslint/blob/master/docs/user-guide/configuring.md#extending-configuration-files)

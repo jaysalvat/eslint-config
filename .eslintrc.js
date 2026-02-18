@@ -217,13 +217,6 @@ module.exports = {
       named: 'never'
     } ],
     'use-isnan': 2,
-    'valid-jsdoc': [ 2, {
-      prefer: {
-        return: 'returns'
-      },
-      requireReturn: true,
-      requireParamDescription: true
-    } ],
     'valid-typeof': 2,
     'vars-on-top': 2,
     'wrap-iife': 0,
