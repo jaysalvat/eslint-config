@@ -1,119 +1,67 @@
 [![npm version](https://badge.fury.io/js/%40jaysalvat%2Feslint-config.svg)](https://badge.fury.io/js/%40jaysalvat%2Feslint-config)
 
-Eslint configuration 
-====================
+Eslint + Prettier configuration 
+===============================
 
 ## Usage
 
-Install npm package
+Install the npm package:
 
 ```sh
-npm install @jaysalvat/eslint-config
+npm i @jaysalvat/eslint-config
 ```
 
-Inside your project `eslint.config.js` file (ESLint récent)
+In your project's `eslint.config.js` file (recent ESLint flat config):
 
 If your project uses `"type": "module"` (ESM):
 
 ```js
-import jaysalvat from '@jaysalvat/eslint-config'
+import config from '@jaysalvat/eslint-config'
 
 export default [
-    ...jaysalvat
+  ...config.flat
 ]
 ```
 
 If your project uses CommonJS:
 
 ```js
-const jaysalvat = require('@jaysalvat/eslint-config')
+const config = require('@jaysalvat/eslint-config')
 
 module.exports = [
-    ...jaysalvat
+  ...config.flat
 ]
 ```
 
-## Presets disponibles
+## Available presets
 
-- `flat`: rules uniquement
+- `flat`: rules only
 - `flatWithStyle`: rules + stylistic
 - `vue`: rules + vue
 - `vueWithStyle`: rules + vue + stylistic
 
-### ESM (`"type": "module"`)
+## Configuration Prettier
 
-```js
-import jaysalvat from '@jaysalvat/eslint-config'
+Install Prettier in your project as well:
 
-export default [
-    ...jaysalvat.flat
-]
+```sh
+npm i -D prettier
 ```
 
-```js
-import jaysalvat from '@jaysalvat/eslint-config'
+Then create a `prettier.config.cjs` file:
 
-export default [
-    ...jaysalvat.flatWithStyle
-]
+```js
+const { prettier } = require('@jaysalvat/eslint-config')
+
+module.exports = prettier
 ```
 
-```js
-import jaysalvat from '@jaysalvat/eslint-config'
-
-export default [
-    ...jaysalvat.vue
-]
-```
+If your project is ESM, you can use `prettier.config.mjs`:
 
 ```js
-import jaysalvat from '@jaysalvat/eslint-config'
+import config from '@jaysalvat/eslint-config'
 
-export default [
-    ...jaysalvat.vueWithStyle
-]
-```
-
-### CommonJS
-
-```js
-const jaysalvat = require('@jaysalvat/eslint-config')
-
-module.exports = [
-    ...jaysalvat.flat
-]
-```
-
-```js
-const jaysalvat = require('@jaysalvat/eslint-config')
-
-module.exports = [
-    ...jaysalvat.flatWithStyle
-]
-```
-
-```js
-const jaysalvat = require('@jaysalvat/eslint-config')
-
-module.exports = [
-    ...jaysalvat.vue
-]
-```
-
-```js
-const jaysalvat = require('@jaysalvat/eslint-config')
-
-module.exports = [
-    ...jaysalvat.vueWithStyle
-]
-```
-
-Legacy usage (`.eslintrc.*`)
-
-```js
-{
-    "extends": "@jaysalvat/eslint-config/legacy"
-}
+export default config.prettier
 ```
 
 ## Further Reading

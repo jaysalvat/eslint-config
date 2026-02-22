@@ -1,6 +1,8 @@
 const js = require('@eslint/js')
 const vue = require('eslint-plugin-vue')
 const globals = require('globals')
+
+const prettier = require('./prettier.js')
 const rules = require('./rules.js')
 const rulesStyle = require('./rules.style.js')
 const rulesVue = require('./rules.vue.js')
@@ -43,8 +45,10 @@ const vueOnly = [ baseConfig, ...vueConfigs ]
 const vueWithStyle = [ baseConfig, styleConfig, ...vueConfigs ]
 
 module.exports = flat
-module.exports.globals = globals
 module.exports.flat = flat
 module.exports.flatWithStyle = flatWithStyle
 module.exports.vue = vueOnly
 module.exports.vueWithStyle = vueWithStyle
+
+module.exports.prettier = prettier
+module.exports.globals = globals
