@@ -4,8 +4,7 @@
   "description": "Personal Eslint config",
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./legacy": "./legacy.js"
+    ".": "./index.js"
   },
   "private": false,
   "scripts": {
@@ -14,23 +13,16 @@
     "release:minor": "npm version minor & npm publish",
     "release:major": "npm version major & npm publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaysalvat/eslint-config.git"
-  },
   "keywords": [
     "eslint",
     "config",
     "javascript"
   ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jaysalvat/eslint-config/issues"
-  },
-  "homepage": "https://github.com/jaysalvat/eslint-config#readme",
   "dependencies": {
-    "@stylistic/eslint-plugin": "^5.3.1"
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.3.1",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.3.0"
   },
   "peerDependencies": {
     "eslint": ">=10"

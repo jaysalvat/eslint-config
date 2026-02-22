@@ -1,47 +1,50 @@
+const js = require('@eslint/js')
+const vue = require('eslint-plugin-vue')
+const globals = require('globals')
+const rules = require('./rules.js')
+const rulesStyle = require('./rules.style.js')
+const rulesVue = require('./rules.vue.js')
 
-/* eslint-env node */
-
-const legacyConfig = require('./.eslintrc.js')
-const stylistic = require('@stylistic/eslint-plugin')
-const { builtinRules } = require('eslint/use-at-your-own-risk')
-
-const replacementRules = {
-	'no-native-reassign': 'no-global-assign',
-	'no-new-object': 'no-object-constructor',
-	'no-spaced-func': '@stylistic/function-call-spacing'
+const baseConfig = {
+	...js.configs.recommended,
+	languageOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+		globals: {
+			...globals.browser,
+			...globals.node,
+			...globals.es2026,
+		}
+	},
+	rules
 }
 
-const rules = Object.entries(legacyConfig.rules).reduce((acc, [ name, value ]) => {
-	const rule = builtinRules.get(name)
-
-	if (!rule || !rule.meta || !rule.meta.deprecated) {
-		acc[name] = value
-		return acc
-	}
-
-	if (stylistic.rules[name]) {
-		acc[`@stylistic/${name}`] = value
-		return acc
-	}
-
-	if (replacementRules[name]) {
-		acc[replacementRules[name]] = value
-	}
-
-	return acc
-}, {})
-
-module.exports = [
+const vueConfigs = [
+	...vue.configs['flat/recommended'],
 	{
-		languageOptions: {
-			ecmaVersion: legacyConfig.parserOptions.ecmaVersion,
-			sourceType: 'script'
-		},
-		plugins: {
-			'@stylistic': stylistic
-		},
-		rules
-	}
+		files: [ '**/*.vue' ],
+		rules: rulesVue
+	},
+  {
+    files: [ '**/*.vue' ],
+    rules: {
+      indent: 'off'
+    }
+  }
 ]
 
-module.exports.legacy = legacyConfig
+const styleConfig = {
+	rules: rulesStyle
+}
+
+const flat = [ baseConfig ]
+const flatWithStyle = [ baseConfig, styleConfig ]
+const vueOnly = [ baseConfig, ...vueConfigs ]
+const vueWithStyle = [ baseConfig, styleConfig, ...vueConfigs ]
+
+module.exports = flat
+module.exports.globals = globals
+module.exports.flat = flat
+module.exports.flatWithStyle = flatWithStyle
+module.exports.vue = vueOnly
+module.exports.vueWithStyle = vueWithStyle

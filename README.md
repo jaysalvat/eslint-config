@@ -33,6 +33,81 @@ module.exports = [
 ]
 ```
 
+## Presets disponibles
+
+- `flat`: rules uniquement
+- `flatWithStyle`: rules + stylistic
+- `vue`: rules + vue
+- `vueWithStyle`: rules + vue + stylistic
+
+### ESM (`"type": "module"`)
+
+```js
+import jaysalvat from '@jaysalvat/eslint-config'
+
+export default [
+    ...jaysalvat.flat
+]
+```
+
+```js
+import jaysalvat from '@jaysalvat/eslint-config'
+
+export default [
+    ...jaysalvat.flatWithStyle
+]
+```
+
+```js
+import jaysalvat from '@jaysalvat/eslint-config'
+
+export default [
+    ...jaysalvat.vue
+]
+```
+
+```js
+import jaysalvat from '@jaysalvat/eslint-config'
+
+export default [
+    ...jaysalvat.vueWithStyle
+]
+```
+
+### CommonJS
+
+```js
+const jaysalvat = require('@jaysalvat/eslint-config')
+
+module.exports = [
+    ...jaysalvat.flat
+]
+```
+
+```js
+const jaysalvat = require('@jaysalvat/eslint-config')
+
+module.exports = [
+    ...jaysalvat.flatWithStyle
+]
+```
+
+```js
+const jaysalvat = require('@jaysalvat/eslint-config')
+
+module.exports = [
+    ...jaysalvat.vue
+]
+```
+
+```js
+const jaysalvat = require('@jaysalvat/eslint-config')
+
+module.exports = [
+    ...jaysalvat.vueWithStyle
+]
+```
+
 Legacy usage (`.eslintrc.*`)
 
 ```js
