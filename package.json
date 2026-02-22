@@ -8,10 +8,10 @@
   },
   "private": false,
   "scripts": {
-    "release": "npm version patch & npm publish",
-    "release:patch": "npm version patch & npm publish",
-    "release:minor": "npm version minor & npm publish",
-    "release:major": "npm version major & npm publish"
+    "release": "npm login && npm version patch & npm publish",
+    "release:patch": "npm login && npm version patch & npm publish",
+    "release:minor": "npm login && npm version minor & npm publish",
+    "release:major": "npm login && npm version major & npm publish"
   },
   "keywords": [
     "eslint",
